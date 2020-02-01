@@ -1,2 +1,2 @@
 # socialize
-Socialize is an attempt to make a basic social media site from scratch allowing people to share their experience with their friends. 
+Socialize is a basic social media site build using PHP and MySql which aims to connect people.
