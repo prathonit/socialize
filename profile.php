@@ -9,7 +9,7 @@
 <head>
 	<!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">	<title>
-		Login 
+		Profile 
 	</title>
 
 </head>
@@ -36,7 +36,7 @@
 				<form action="update_info.php" method="POST">
 					<div class="form-group" style="width:40%;">
 						<label for="username">Username</label>
-						<input type="text" name="username" class="form-control" type="text" name="username" placeholder="<?php echo $_SESSION['username']; ?>">
+						<p class="form-control-static"><?php echo $_SESSION["username"]; ?></p>
 						<label for="email">Email </label>
 						<input name="email" class="form-control" type="email" value="<?php echo  $_SESSION['email'];?>">
 						<label for="email">Bio </label>
