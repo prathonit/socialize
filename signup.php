@@ -13,7 +13,7 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="index.php" class="navbar-brand"><b>Socialize</b></a>
+				<a href="index.php" class="navbar-brand"><b><i class="glyphicon glyphicon-link"></i>&nbsp;Socialize</b></a>
 			</div>
 			<ul class="nav navbar-nav">
 				

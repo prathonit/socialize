@@ -29,7 +29,7 @@
 		<br><br>
 		<form method="POST" action="search.php">
 			<div class="input-group" style="width:50%;">
-				<input type="text" class="form-control" placeholder="Search">
+				<input type="text" class="form-control" name="search" placeholder="Search">
 				<div class="input-group-btn">
 						<button class="btn btn-default" type="submit">
 							<i class="glyphicon glyphicon-search"></i>

@@ -14,19 +14,9 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="home.php"><b>Socialize</b></a>
-			</div>
-			<ul class="nav navbar-nav">
-					<li><a href="home.php">Feed</a></li>
-					<li class="active"><a href="profile.php">Profile</a></li>
-					<li><a href="find_friends.php">Find friends</a></li>
-				</ul>
-			
-		</div>
-	</nav>
+	<?php 
+		include('assets/nav_profile.php');
+	?>
 	<center>
 		<div class="row">
             <div class="col-sm-8">

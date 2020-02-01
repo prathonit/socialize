@@ -12,19 +12,7 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand"><b>Socialize</b></a>
-			</div>
-			<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Feed</a></li>
-					<li><a href="profile.php">Profile</a></li>
-					<li><a href="find_friends.php">Find friends</a></li>
-				</ul>
-			
-		</div>
-	</nav>
+	<?php include('assets/nav_home.php'); ?>
 	<center>
 		<div class="row">
 			<div class="col-sm-8">
