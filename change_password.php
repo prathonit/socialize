@@ -23,9 +23,12 @@
             $row=mysqli_fetch_array($result);
             if ($row['password']==$oldpassword){
                 if ($password==$cpassword){
-                    $query="UPDATE `php` SET `password`=$password WHERE `username`='".$_SESSION["username"]."' ";
-                    mysqli_query($handle,$query);
-                    header("Location:profile.php");
+                    $queryi="UPDATE `php` SET `password`='".$password."' WHERE `username`='".$_SESSION["username"]."' ";
+                    if (mysqli_query($handle,$queryi)){
+                        header("Location:profile.php");
+                    }else{
+                        echo "Failed";
+                    }
                 }   
                 else{
                     die("The passwords do not match please try again");
