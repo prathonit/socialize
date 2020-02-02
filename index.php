@@ -26,6 +26,7 @@
 		</div>
 	</nav>
 	<center>
+		<h1><b><i class="glyphicon glyphicon-link"></i>Socialize</b></h1>
 		<h1>Login </h1>
 		<br>
 		<form action="auth.php" method="POST">

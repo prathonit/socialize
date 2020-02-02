@@ -24,6 +24,7 @@
 		</div>
 	</nav>
 	<center>
+		<h1><b><i class="glyphicon glyphicon-link"></i>Socialize</b></h1>
 		<h1>Signup</h1>
 		<p>All fields are required.	</p>
 		<br>

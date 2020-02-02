@@ -25,7 +25,10 @@
 		if ($dataOk!=0){
 			$password=md5($password);
 			$query="INSERT INTO `php` (`username`,`password`,`email`,`bio`) VALUES ('".$username."','".$password."','".$email."','".$bio."')";
+			$query_profile_picture="INSERT INTO `profile_picture` (`username`) VALUES ('".$username."')";
+
 			mysqli_query($handle,$query);
+			mysqli_query($handle,$query_profile_picture);
 			setcookie("username",$username,time()+(86500*30),"/");
 			header("Location:index.php");
 

@@ -1,6 +1,23 @@
 <?php 
 	
 	session_start();
+	$dbhost="localhost";
+    $dbusername="prathonit";
+    $dbpassword="pwdpwd";
+    $dbname="main";
+    $handle=new mysqli($dbhost,$dbusername,$dbpassword,$dbname);
+    if ($handle->connect_error){
+    	die("There was an error try after sometime");
+    }else{
+    	$query="SELECT * FROM `php` WHERE `username`='".$_SESSION['username']."'   ";
+    	if ($result=$handle->query($query)){
+    			$row=mysqli_fetch_array($result);
+    			$profile_picture_path="../socialize_data/profile_picture/".$row['picture_path'];
+    	}
+    	else{
+    		die("There was an error try after sometime");
+    	}
+    }
 
 
 ?>
@@ -21,10 +38,15 @@
 		<div class="row">
             <div class="col-sm-8">
 		<div class="panel panel-success">
-			<div class="panel-body"><h2>Profile </h2></div>
-				<div class="panel-footer">
+			<div class="panel-body"><h2>Profile </h2>
+				<img src="<?php echo $profile_picture_path; ?>" class="media-object" style="width:20%;"><br>
+				<a style="color: white;" href="profile_picture.php"><button class="btn btn-success">Set/Update Profile picture</button></a><br>
+
+			</div>
+								<div class="panel-footer">
 				<form action="update_info.php" method="POST">
 					<div class="form-group" style="width:40%;">
+
 						<label for="username">Username</label>
 						<p class="form-control-static"><?php echo $_SESSION["username"]; ?></p>
 						<label for="email">Email </label>

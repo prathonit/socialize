@@ -12,19 +12,7 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand"><b>Socialize</b></a>
-			</div>
-			<ul class="nav navbar-nav">
-					<li><a href="home.php">Feed</a></li>
-					<li><a href="profile.php">Profile</a></li>
-					<li class="active"><a href="find_friends.php">Find friends</a></li>
-				</ul>
-			
-		</div>
-	</nav>
+	<?php include('assets/nav_find.php'); ?>
 	<center>
 		<br><br>
 		<form method="POST" action="search.php">
@@ -59,15 +47,17 @@
         	die("Please enter atleast three characters to search");
         }
         $query="SELECT * FROM `php` WHERE `username` LIKE '%".$search."%'";
-
+        $profile_picture_path="../socialize_data/profile_picture/";
         if ($result=$handle->query($query)){
         	echo "<center>";
         	while($row=$result->fetch_assoc()){
+                $profile_picture_file=$profile_picture_path.$row['picture_path'];
         		$url="userprofile.php?username=".$row['username'];
         		echo "<a href=$url>";
         		echo "<div class='panel panel-success'>";
         		echo "<div class='panel-body'>";
         		echo "<b>Username:</b>".$row['username'];
+                echo "<img src='$profile_picture_file' class='media-object' style='width:8%;'><br>";
         		echo "</div>";
         		echo "<div class='panel-footer'>";
         		echo "<b>Email</b>"." ".$row["email"]." "."<b>Bio:</b>".$row["bio"];

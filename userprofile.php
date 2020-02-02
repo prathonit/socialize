@@ -13,7 +13,6 @@
 
         if ($result=$handle->query($query)){
         	$row=mysqli_fetch_array($result);
-
         }
     }
 
@@ -29,24 +28,16 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="home.php"><b>Socialize</b></a>
-			</div>
-			<ul class="nav navbar-nav">
-					<li><a href="home.php">Feed</a></li>
-					<li><a href="profile.php">Profile</a></li>
-					<li><a href="find_friends.php">Find friends</a></li>
-				</ul>
-			
-		</div>
-	</nav>
-	<center>
+		<?php 
+			include('assets/nav_find.php');
+		?>
+		<center>
 		<div class="row">
             <div class="col-sm-12">
 		<div class="panel panel-success">
-			<div class="panel-body"><h2>Profile </h2></div>
+			<div class="panel-body"><h2>Profile </h2><br>
+				<img src="../socialize_data/profile_picture/<?php echo $row['picture_path']; ?>" class="media-object" style="width:8%;">
+			</div>
 				<div class="panel-footer">
 				<form>
 					<div class="form-group" style="width:40%;">
