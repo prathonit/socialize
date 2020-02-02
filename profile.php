@@ -40,7 +40,7 @@
 		<div class="panel panel-success">
 			<div class="panel-body"><h2>Profile </h2>
 				<img src="<?php echo $profile_picture_path; ?>" class="media-object" style="width:20%;"><br>
-				<a style="color: white;" href="profile_picture.php"><button class="btn btn-success">Set/Update Profile picture</button></a><br>
+				<a style="color: white;" href="profile_picture.php"><button class="btn btn-success">Update Profile picture</button></a><br>
 
 			</div>
 								<div class="panel-footer">
