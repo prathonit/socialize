@@ -1,6 +1,9 @@
 <?php 
-	
 	session_start();
+	if ($_GET['username']==$_SESSION['username']){
+		header("Location:profile.php");
+	}
+	
 	$dbhost="localhost";
     $dbusername="prathonit";
     $dbpassword="pwdpwd";
@@ -13,6 +16,16 @@
 
         if ($result=$handle->query($query)){
         	$row=mysqli_fetch_array($result);
+        }
+        $query_friend="SELECT * FROM `relationship` WHERE `user_1`='".$_SESSION['username']."' AND `user_2`='".$_GET['username']."'  ";
+        if ($result_friend=$handle->query($query_friend)){
+        	$row_friend=mysqli_fetch_array($result_friend);
+        	if ($row_friend['rel']==1){
+        		$ok=1;
+        	}
+        	else{
+        		$ok=0;
+        	}
         }
     }
 
@@ -37,6 +50,19 @@
 		<div class="panel panel-success">
 			<div class="panel-body"><h2>Profile </h2><br>
 				<img src="../socialize_data/profile_picture/<?php echo $row['picture_path']; ?>" class="media-object" style="width:8%;">
+				<br>
+
+				<?php 
+					if ($ok==1){
+						$url="alter_friend.php?username=".$_GET['username']."&request=remove";
+						echo "<a href='$url'><button class='btn btn-warning'><i class='glyphicon glyphicon-star'></i>Friends</button></a>";
+					}
+					else{
+						$url="alter_friend.php?username=".$_GET['username']."&request=add";
+						echo "<a href='$url'><button class='btn btn-warning'><i class='glyphicon glyphicon-star-empty'></i>Add Friend</button></a>";
+					}
+				?>
+				
 			</div>
 				<div class="panel-footer">
 				<form>

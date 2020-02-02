@@ -91,8 +91,33 @@
 				</div>
 				</div>
             </div>
+            <div class="col-sm-4">
+            	<div class="panel panel-success">
+            		<div class="panel-body">
+            			<h1>Friends</h1>
+            		</div>
+            		<div class="panel-footer">
+            			<?php 
+            				$query="SELECT * FROM `relationship` WHERE `user_1`='".$_SESSION['username']."' ";
+            				if ($result=$handle->query($query)){
+            					while($row=$result->fetch_assoc()){
+            						$url="userprofile.php?username=".$row['user_2'];
+            						echo "<a href='$url'>";
+            						echo "<button class='btn btn-link'>";
+            						echo $row['user_2'];
+            						echo "</button>";
+            						echo "</a>";
+            						
+            					}
+            				}
+
+            			?>
+            		</div>
+            	</div>
+            </div>
 
 		</div>
+
 		
 		
 	</center>

@@ -22,13 +22,17 @@
 			$dataOk=0;
 			die("Passwords don't match");
 		}
+		//checking for duplicate accounts
+		$query="SELECT * FROM `php` WHERE `username`='".$username."' ";
+		if ($handle->query($query)){
+			die("The username already exists, please try with some other username");
+		}
 		if ($dataOk!=0){
 			$password=md5($password);
 			$query="INSERT INTO `php` (`username`,`password`,`email`,`bio`) VALUES ('".$username."','".$password."','".$email."','".$bio."')";
-			$query_profile_picture="INSERT INTO `profile_picture` (`username`) VALUES ('".$username."')";
 
 			mysqli_query($handle,$query);
-			mysqli_query($handle,$query_profile_picture);
+			
 			setcookie("username",$username,time()+(86500*30),"/");
 			header("Location:index.php");
 
