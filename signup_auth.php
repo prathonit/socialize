@@ -23,10 +23,7 @@
 			die("Passwords don't match");
 		}
 		//checking for duplicate accounts
-		$query="SELECT * FROM `php` WHERE `username`='".$username."' ";
-		if ($handle->query($query)){
-			die("The username already exists, please try with some other username");
-		}
+		
 		if ($dataOk!=0){
 			$password=md5($password);
 			$query="INSERT INTO `php` (`username`,`password`,`email`,`bio`) VALUES ('".$username."','".$password."','".$email."','".$bio."')";
@@ -41,3 +38,4 @@
 	else{
 		die("There was a problem");
 	}
+?>
