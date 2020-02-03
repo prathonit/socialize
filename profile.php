@@ -81,9 +81,7 @@
 					<form method="POST" action="post.php">
 				    	<div class="form-group">
 				    		<label for="Post">Post</label>
-				    		<textarea class="form-control" rows="7" name="post" id="post" placeholder="What's up?">
-				    			
-				    		</textarea><br>
+				    		<textarea class="form-control" rows="7" name="post" id="post" placeholder="What's up?"></textarea><br>
 				    		<input type="submit" value="Post" class="btn btn-success">
 
 				    	</div>
