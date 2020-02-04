@@ -1,3 +1,6 @@
+<?php
+    include ('config/declaration.php');
+?>
 <?php 
 	$dbhost="localhost";
     $dbusername="prathonit";
@@ -14,7 +17,7 @@
     	return $data;
     	    }
 
-    	session_start();
+    	
     	$username=validate($_POST['username']);
     	$email=validate($_POST['email']);
     	$bio=validate($_POST['bio']);

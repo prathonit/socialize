@@ -1,6 +1,7 @@
+<?php
+    include ('config/declaration.php');
+?>
 <?php 
-	
-	session_start();
 	$dbhost="localhost";
     $dbusername="prathonit";
     $dbpassword="pwdpwd";
@@ -15,7 +16,7 @@
     			$profile_picture_path="../socialize_data/profile_picture/".$row['picture_path'];
     	}
     	else{
-    		die("There was an error try after sometime");
+    		die("There was an error try after sometime"); 
     	}
     }
 

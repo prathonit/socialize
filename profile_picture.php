@@ -1,5 +1,7 @@
+<?php
+    include ('config/declaration.php');
+?>
 <?php 
-	session_start();
 	$dbhost="localhost";
     $dbusername="prathonit";
     $dbpassword="pwdpwd";

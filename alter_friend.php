@@ -1,7 +1,7 @@
 <?php
-	session_start();
-	
-
+    include ('config/declaration.php');
+?>
+<?php
     $user_1=$_SESSION['username'];
     $user_2=$_GET['username'];
     $request=$_GET['request'];

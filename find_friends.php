@@ -1,5 +1,5 @@
-<?php 
-	session_start();
+<?php
+    include ('config/declaration.php');
 ?>
 
 <!DOCTYPE html>
