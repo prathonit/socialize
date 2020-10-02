@@ -2,6 +2,9 @@
     include ('config/declaration.php');
 ?>
 <?php
+    if (!isset($_SESSION['username']) || !isset($_GET['username']) || !isset($_GET['request'])) {
+        die("Request parameters missing");
+    }
     $user_1=$_SESSION['username'];
     $user_2=$_GET['username'];
     $request=$_GET['request'];

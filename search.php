@@ -42,6 +42,9 @@
             $data=trim($data);
             return $data;
         }
+        if (!isset($_POST['search'])) {
+            die("request parameters missing");
+        }
         $search=validate($_POST['search']);
         if (strlen($search)<=2){
         	die("Please enter atleast three characters to search");
@@ -65,7 +68,6 @@
         		echo "</div>";
         		echo "</a>";
         		echo "<br>";
-
         	}
         	
         }
