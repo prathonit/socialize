@@ -14,6 +14,10 @@
             $data=trim($data);
             return $data;
         }
+        if (!isset($_POST['oldpassword']) || !isset($_POST['password']) || !isset($_POST['cpassword'])) {
+            // bad request
+            die("Request parameters are missing");
+        }
         $oldpassword=md5(validate($_POST['oldpassword']));
         $password=md5(validate($_POST['password']));
         $cpassword=md5(validate($_POST['cpassword']));
