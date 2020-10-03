@@ -14,8 +14,12 @@
 		$username=validate($_POST['username']);
 		$password=validate($_POST['password']);
 		$password=md5($password);
-		$query="SELECT * FROM `php` WHERE `username`='".$username."'";
+		//settings limit as 1 to make sure only one user is selected at max
+		$query="SELECT * FROM `php` WHERE `username`='".$username."' LIMIT 1";
 		if ($result=mysqli_query($handle,$query)){
+			if ($result->length() !== 1) {
+				die('User does not exist');
+			}
 			$row=mysqli_fetch_array($result);
 			if ($row['password']==$password){
 				session_start();
