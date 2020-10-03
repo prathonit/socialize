@@ -22,12 +22,12 @@
         $password=md5(validate($_POST['password']));
         $cpassword=md5(validate($_POST['cpassword']));
 
-        $query="SELECT `password` FROM `php` WHERE `username`='".$_SESSION['username']."'";
+        $query="SELECT `password` FROM `php` WHERE `username`='".$_SESSION['username']."' LIMIT 1";
         if ($result=mysqli_query($handle,$query)){
             $row=mysqli_fetch_array($result);
             if ($row['password']==$oldpassword){
                 if ($password==$cpassword){
-                    $queryi="UPDATE `php` SET `password`='".$password."' WHERE `username`='".$_SESSION["username"]."' ";
+                    $queryi="UPDATE `php` SET `password`='".$password."' WHERE `username`='".$_SESSION["username"]."' LIMIT 1";
                     if (mysqli_query($handle,$queryi)){
                         header("Location:profile.php");
                     }else{
