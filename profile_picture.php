@@ -63,7 +63,9 @@
 </body>
 </html>
 <?php 
-	if ($_SERVER['REQUEST_METHOD']=="POST"){
+	if ($_SERVER['REQUEST_METHOD']=="POST") {
+        //check for request parameters
+
 		$target_dir="../socialize_data/profile_picture/";
 		$picture_name=$_SESSION['username'].basename($_FILES["profile_picture"]["name"]);
 		$target_file=$target_dir.$picture_name;
@@ -85,7 +87,9 @@
 			mysqli_query($handle,$query_pic);
 			header("Location:profile.php");
 		}else{
-			echo "There was an error please try again after sometime";
+			die("Bad request");
 		}
-	}
+	} else {
+        die("Bad request");
+    }
 ?>
